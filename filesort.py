@@ -6,33 +6,32 @@ import re
 import os
 
 
-def mkdir(path: str):
-    full_path: str = WORK_DIR + path
+def mkdir(root_dir: str, path: str):
+    full_path: str = root_dir + path
     if not os.path.exists(full_path):
         os.mkdir(full_path)
 
 
-def mkdirs():
-    for dir in SCHEMA.keys():
-        mkdir(dir)
+def mkdirs(root_dir: str, dirs):
+    for dir in dirs:
+        mkdir(root_dir, dir)
 
 
-def move(filename: str, folder: str):
-    return shutil.move(WORK_DIR + filename, WORK_DIR + folder)
+def move(root_dir: str, filename: str, folder: str):
+    return shutil.move(root_dir + filename, root_dir + folder)
 
 
 def sort(regex: bool):
     files: list = os.listdir(WORK_DIR)
-    mkdirs()
+    mkdirs(WORK_DIR, SCHEMA.keys())
     for filename, (sort_to, queries) in product(files, SCHEMA.items()):
         for query in queries:
             if regex:
                 match = re.match(query, filename)
             else:
                 match = query.lower() in filename.lower()
-
             if match:
-                move(filename, sort_to)
+                move(WORK_DIR, filename, sort_to)
                 break
 
 
