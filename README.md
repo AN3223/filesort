@@ -1,8 +1,7 @@
 # filesort
-A simple command line tool for sorting files, written in Python
+A simple command line tool for sorting files, written in Python. Filesort will sort files in the current working directory into a specified folder based on filenames.
 
 ## Usage
-Filesort will sort files in the current working directory into a specified folder based on file names.
 ```
 usage: filesort.py [-h] [--save] [--use-presets] [--regex]
                    sort_to_folder query [query ...]
@@ -23,3 +22,6 @@ optional arguments:
   --use-presets, --up  use specified presets
   --regex, --re        sort_by args will be used as regex queries
 ```
+
+## Requirements
+Python 3.5 or greater
