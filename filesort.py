@@ -37,9 +37,21 @@ def sort(regex: bool):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Filesort')
-    parser.add_argument('sort_to')
-    parser.add_argument('sort_by', nargs='+')
+    parser = argparse.ArgumentParser(
+        description='Filesort - a simple command line tool for sorting files'
+    )
+    parser.add_argument(
+        'sort_to_folder',
+        help='The name of the folder in the current'
+             ' working directory to sort matching files into (if'
+             ' the specified folder does not exist it will create one).'
+    )
+    parser.add_argument(
+        'query', nargs='+',
+        help='The query each filename will have to match'
+             ' against in order to be sorted. Filesort will simply check'
+             ' if a filename contains the query (case-insensitive).'
+    )
     parser.add_argument(
         '--save', '--s',
         action='store_true',
@@ -67,9 +79,9 @@ if __name__ == '__main__':
 
     if args.use_presets:
         with open(PRESET_PATH, 'r') as f:
-            SCHEMA: dict = {k: v for (k, v) in json.loads(f.read()).items() if k in args.sort_by}
+            SCHEMA: dict = {k: v for (k, v) in json.loads(f.read()).items() if k in args.query}
     else:
-        SCHEMA: dict = {args.sort_to: args.sort_by}
+        SCHEMA: dict = {args.sort_to_folder: args.query}
 
     if args.save:
         with open(PRESET_PATH, 'r') as rf:
