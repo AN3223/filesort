@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='filesort',
-    version='0.1.0',
+    version='0.1.1',
     description='A simple command line tool for sorting files',
     url='https://github.com/AN3223/filesort',
     author='AN3223',
