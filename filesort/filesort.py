@@ -40,7 +40,7 @@ def parse_args(args=None):
     parser.add_argument(
         '--save', '--s',
         action='store_true',
-        help='save sort config to presets'
+        help='save sort-config to presets'
     )
     parser.add_argument(
         '--use-presets', '--up',
@@ -50,7 +50,7 @@ def parse_args(args=None):
     parser.add_argument(
         '--regex', '--re',
         action='store_true',
-        help='sort_by args will be used as regex queries'
+        help='query args will be used as regex queries'
     )
     return parser.parse_args(args)
 
