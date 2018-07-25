@@ -3,6 +3,7 @@ A simple command line tool for sorting files, written in Python. Filesort will s
 
 ## Installation
 `pip install filesort`
+
 It installs straight to your Python "Scripts" directory, so just make sure that's in your PATH, then you're set to use Filesort.
 
 ## Usage
