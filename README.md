@@ -8,8 +8,8 @@ It installs straight to your Python "Scripts" directory, so just make sure that'
 
 ## Usage
 ```
-usage: filesort.py [-h] [--save] [--use-presets] [--regex]
-                   sort_to_folder query [query ...]
+usage: filesort [-h] [--save] [--use-presets] [--regex]
+                sort_to_folder query [query ...]
 
 Filesort - a simple command line tool for sorting files
 
@@ -23,9 +23,9 @@ positional arguments:
 
 optional arguments:
   -h, --help           show this help message and exit
-  --save, --s          save sort config to presets
+  --save, --s          save sort-config to presets
   --use-presets, --up  use specified presets
-  --regex, --re        sort_by args will be used as regex queries
+  --regex, --re        query args will be used as regex queries
 ```
 
 ## Requirements
