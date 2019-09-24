@@ -1,6 +1,9 @@
 # Filesort
 A simple command line tool for sorting files, written in Python. Filesort will sort files in the current working directory into a specified folder based on filenames.
 
+# Disclaimer
+I wrote this before knowing about command line tools such as find(1). This tool is likely not very useful. 
+
 ## Installation
 `pip install filesort`
 
